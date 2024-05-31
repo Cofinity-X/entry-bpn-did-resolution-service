@@ -2,8 +2,6 @@ name: Build and publish container image to ACR
 
 on:
   push:
-    branches:
-      - 'main'
     tags:
       - 'v*.*.*'
       - 'v*.*.*-*'
@@ -12,7 +10,7 @@ on:
 jobs:
   push-image-to-acr:
     runs-on: ubuntu-latest
-    environment: acr-shared-env
+    environment: entry-acr
     permissions:
       contents: read
       actions: read
